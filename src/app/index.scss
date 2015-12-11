@@ -1,0 +1,70 @@
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+/* Overwrite bootstrap global variables */
+// injector:global
+// endinjector
+
+/* Do not remove this comments bellow. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector:app
+// endinjector
+/* app css stylesheet */
+
+
+
+.navbar-default .navbar-brand {
+  color: $brand-primary;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: $brand-info;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+  transition: 0.25s all;
+}
+
+.navbar-default .navbar-collapse .navbar-brand {
+  margin-right:50%;
+}
+
+
+.navbar-default .navbar-toggle {
+  position: relative;
+  right:10px;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: $brand-info;
+  background-image: none;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+}
+.navbar-default .navbar-toggle:hover{
+  background-color: lighten($brand-primary, 5%);
+  .icon-bar{
+      background-color:darken(#f8f8f8, 10%);
+  }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #f8f8f8;
+}
+
+.navbar-default .navbar-nav.btn-group  > li > a.btn-link.active {
+    border-color: transparent;
+    outline:none;
+    color:$brand-info;
+}
+
+.navbar-nav > li > a.btn-link:hover{
+    color:lighten($brand-primary, 5%);
+}

@@ -1,0 +1,43 @@
+
+
+<!-- <div class="center-form panel">
+     <div class="panel-body">
+       <h2 class="text-center">Log in</h2>
+       <form method="post" ng-submit="login()" name="loginForm">
+         <div class="form-group has-feedback">
+           <input class="form-control input-lg" type="text" name="email" ng-model="user.email" placeholder="Email" required autofocus>
+           <span class="ion-at form-control-feedback"></span>
+         </div>
+         <div class="form-group has-feedback">
+           <input class="form-control input-lg" type="password" name="password" ng-model="user.password" placeholder="Password" required>
+           <span class="ion-key form-control-feedback"></span>
+         </div>
+         <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">Log in</button>
+         <br/>
+       </form>
+     </div>
+</div> -->
+
+ <div class="center-form">
+     <form method="post" ng-submit="vm.login()" name="loginForm">
+           <div class="modal-header">
+                <h3 class="text-center modal-title">Log in</h3>
+               <button popover-placement="right" uib-popover="user:willsonic@wsseed.com  pw:wsSeed1234 " type="button" class="btn btn-link">login-data</button>
+           </div>
+           <div class="modal-body">
+                 <div class="form-group has-feedback">
+                   <input class="form-control input-lg" type="text" name="email" ng-model="vm.email" placeholder="Email" required autofocus>
+                    <span class="ion-at form-control-feedback"></span>
+                 </div>
+                  <div  class="form-group has-feedback">
+                    <input class="form-control input-lg" type="password" name="password" ng-model="vm.password" placeholder="Password" required>
+                    <span class="ion-key form-control-feedback"></span>
+                  </div>
+           </div>
+           <div class="modal-footer">
+                <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-lg  btn-block btn-success">Log in</button>
+               <br/>
+           </div>
+     </form>
+</div>
+
