@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">wsSeeds:>)</a>
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+             <ul class="nav navbar-nav btn-group">
+                 <li>
+                     <a ng-href="#/"
+                        class="btn btn-link"
+                        role="button"
+                        ng-model="vm.viewState"
+                        uib-btn-radio="'home'">
+                        <i class="glyphicon glyphicon-home"></i>
+                     </a>
+                 </li>
+                 <li ng-if="vm.isAuthenticated()">
+                       <a ng-href="#/dashboard"
+                          class="btn btn-link"
+                          role="button"
+                          ng-model="vm.viewState"
+                          uib-btn-radio="'dashboard'">
+                          <i class="glyphicon glyphicon-dashboard"></i>
+                     </a>
+                 </li>
+                 <li ng-if="vm.isAuthenticated()">
+                     <a ng-href="#/userProfile"
+                        class="btn btn-link"
+                        role="button"
+                        ng-model="vm.viewState"
+                        uib-btn-radio="'userProfile'">
+                       <i class="glyphicon glyphicon-user"></i>
+                     </a>
+                 </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                 <li ng-if="vm.isAuthenticated()"  ><a ng-href="#/"  ng-click="vm.logoutBtnClicked()">Logout <i class="glyphicon glyphicon-log-out"></i></a></li>
+                 <li ng-if="!vm.isAuthenticated()" ><a href="javascript:void(0)"  ng-click="vm.loginBtnClicked()">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
+            </ul>
+        </div>
+  </div>
+</nav>
+
+<script type="text/ng-template" id="modalContentBase.html">
+         <ng-include src="'app/components/user/login/userlogin.html'"></ng-include>
+</script>
