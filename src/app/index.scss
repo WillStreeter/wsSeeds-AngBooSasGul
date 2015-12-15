@@ -20,11 +20,16 @@ $font-stack: Satisfy, cursive;
     border-color:$forest-fall;
   }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight:200;
+}
+
 .home-splash .container h1,
 .home-splash .container h2{
    font-family:$font-stack;
    color:$mountain-water;
 }
+
 .home-splash{
   margin-top:$navbar-height *2;
 }
@@ -34,12 +39,18 @@ $font-stack: Satisfy, cursive;
   background-color: $forest-fall;
   color:darken($forest-dirt, 5%);
 }
+
 .home-splash .container h1 small{
    font-family:$font-family-monospace;
    font-size:30px;
    color:$forest-dirt;
-
 }
+
+.dashboard-stage .container h1{
+   font-size:30px;
+}
+
+
 .dashboard-stage  .page-header{
      border-bottom-color:$forest-bark;
 }
@@ -51,7 +62,18 @@ $font-stack: Satisfy, cursive;
 }
 .dashboard-stage .sidebar{
   margin-top:$navbar-height *5;
+  .nav-sidebar{
+    a{
+      color:darken($forest-leaf, 10%);
+      font-weight:200;
+      font-size:24px;
+    }
+    a:hover{
+      background-color: darken($forest-summer, 5%);
+    }
+  }
 }
+
 .navbar-default .navbar-brand {
   color: $creek-water-blue;
 }
@@ -83,6 +105,7 @@ $font-stack: Satisfy, cursive;
   border: 1px solid #c5c5c5;
   border-radius: 4px;
 }
+
 .navbar-default .navbar-toggle:hover{
   background-color: lighten($forest-leaf, 5%);
   .icon-bar{
