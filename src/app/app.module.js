@@ -9,7 +9,7 @@
     'ngRoute',
     'ngResource',
     'ui.bootstrap',
-    'wsSeed.version',
+    'wsSeed.utilDirectives',
     'wsSeed.mainStage.module',
     'wsSeed.app.core.module',
     'wsSeed.navbar.module',

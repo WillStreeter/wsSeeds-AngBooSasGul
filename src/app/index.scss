@@ -1,4 +1,6 @@
 $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
+$font-stack: Satisfy, cursive;
 
 /* Overwrite bootstrap global variables */
 // injector:global
@@ -14,15 +16,48 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 // injector:app
 // endinjector
 /* app css stylesheet */
+  hr{
+    border-color:$forest-fall;
+  }
+
+.home-splash .container h1,
+.home-splash .container h2{
+   font-family:$font-stack;
+   color:$mountain-water;
+}
+.home-splash{
+  margin-top:$navbar-height *2;
+}
 
 
+.home-splash .jumbotron {
+  background-color: $forest-fall;
+  color:darken($forest-dirt, 5%);
+}
+.home-splash .container h1 small{
+   font-family:$font-family-monospace;
+   font-size:30px;
+   color:$forest-dirt;
 
+}
+.dashboard-stage  .page-header{
+     border-bottom-color:$forest-bark;
+}
+.dashboard-stage .main{
+  margin-top:$navbar-height *2;
+}
+.dashboard-stage .main h1{
+   font-family:$font-stack;
+}
+.dashboard-stage .sidebar{
+  margin-top:$navbar-height *5;
+}
 .navbar-default .navbar-brand {
-  color: $brand-primary;
+  color: $creek-water-blue;
 }
 
 .navbar-default .navbar-brand:hover {
-  color: $brand-info;
+  color: darken($mountain-water, 4%);
 }
 
 .navbar-brand {
@@ -43,28 +78,32 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
   margin-top: 8px;
   margin-right: 15px;
   margin-bottom: 8px;
-  background-color: $brand-info;
+  background-color: $creek-water-blue;
   background-image: none;
   border: 1px solid #c5c5c5;
   border-radius: 4px;
 }
 .navbar-default .navbar-toggle:hover{
-  background-color: lighten($brand-primary, 5%);
+  background-color: lighten($forest-leaf, 5%);
   .icon-bar{
-      background-color:darken(#f8f8f8, 10%);
+      background-color:darken($forest-bark, 10%);
   }
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #f8f8f8;
+  background-color: $forest-bark;
 }
 
 .navbar-default .navbar-nav.btn-group  > li > a.btn-link.active {
     border-color: transparent;
     outline:none;
-    color:$brand-info;
+    color:$creek-water-blue;
 }
 
 .navbar-nav > li > a.btn-link:hover{
-    color:lighten($brand-primary, 5%);
+    color:lighten($forest-leaf, 5%);
+}
+
+.leaf-btn{
+  @include button-variant(darken( $forest-dirt,3%), darken($forest-moss, 5%), $forest-fall);
 }
