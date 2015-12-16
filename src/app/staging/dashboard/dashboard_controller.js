@@ -13,10 +13,52 @@
 
   .controller('DashboardCtrl', DashboardCtrl);
 
-  DashboardCtrl.$inject = ['$scope'];
+  DashboardCtrl.$inject = ['$scope','$filter'];
       /* @ngInject */
-  function DashboardCtrl($scope) {
-     var vm  = this;
-     vm.viewState ='DashboardCtrl';
+  function DashboardCtrl($scope, $filter) {
+
+     var vm          = this;
+     var openKey     = '';
+     vm.viewState    = 'DashboardCtrl';
+     vm.dropContent  = [];
+
+     //while I could use a and associated array of key pairs, it is recommmend that arrays
+     //should be base on numerical indexes
+
+
+     vm.dropContent[0] =  { key:'overview', open:false};
+     vm.dropContent[1] =  { key:'pollination', open:false};
+     vm.dropContent[2] =  { key:'formation', open:false};
+     vm.dropContent[3] =  { key:'germination', open:false};
+
+     function updateOpenKey(key){
+       var currentKey = openKey;
+       angular.forEach( vm.dropContent, function(item){
+            if(item.key === key && !item.open) {
+                item.open = true;
+                openKey = key;
+                console.log("item.key ="+item.key +" OPEN =",item);
+            }
+            if(item.key === currentKey && item.open) {
+                item.open = false;
+                console.log("item.key ="+item.key +" CLOSE =",item);
+            }
+        });
+
+     }
+
+     vm.viewContentClick = function(event){
+       //enforce toggle state between all reveavalbe contents clicks
+       console.log(event.target.id);
+       if(openKey != event.target.id){
+             updateOpenKey(event.target.id);
+       }
+     };
+
+
+     //initialize first droppable content
+     updateOpenKey('overview');
+
    }
+
 })();

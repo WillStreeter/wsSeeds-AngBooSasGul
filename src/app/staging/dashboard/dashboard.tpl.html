@@ -11,13 +11,15 @@
     <div class="col-sm-9 col-md-10  main">
         <h1 class="page-header">Seed Growth</h1>
         <div class="row">
-            <div slide-toggle="#slidable-overview"
-                 id='overview'
-                 class="col-md-12"
-                 dynamic-height="1">
-                <h3>Overview</h3>
+            <div reveal-toggle="#revealable-{{vm.dropContent[0].key}}"
+                 reveal-state="vm.dropContent[0].open"
+                 class="col-md-12">
+                  <h3>
+                      <a href=""  id="{{vm.dropContent[0].key}}" class="header-link"
+                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[0].key| capitalize:1 }} </a>
+                 </h3>
             </div>
-            <div id="slidable-overview" class="col-md-9 slideable" easing="linear" duration="1s">
+            <div id="revealable-{{vm.dropContent[0].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img src="assets/images/angular.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
@@ -43,13 +45,15 @@
             </div>
         </div>
         <div class="row">
-            <div slide-toggle="#slidable-pollination"
-                 id='pollination'
-                 class="col-md-12"
-                 dynamic-height="1">
-                <h3>Pollination</h3>
+            <div reveal-toggle="#revealable-{{vm.dropContent[1].key}}"
+                 reveal-state="vm.dropContent[1].open"
+                 class="col-md-12">
+                  <h3>
+                      <a href=""  id="{{vm.dropContent[1].key}}" class="header-link"
+                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[1].key| capitalize:1 }} </a>
+                 </h3>
             </div>
-            <div id="slidable-pollination" class="col-md-9 slideable" easing="linear" duration="1s">
+            <div id="revealable-{{vm.dropContent[1].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
                     <p>Bespoke aesthetic Bushwick craft beer. Qui aesthetic butcher, cardigan ex scenester Neutra American Apparel mumblecore.</p>
                     <p>Ethical adipisicing before they sold out, sriracha Thundercats cardigan dolor deep v placeat. Flannel tattooed meggings direct trade banh mi tousled sriracha. Portland VHS ut dreamcatcher. Butcher eu irony, Banksy leggings eiusmod Pinterest hashtag Etsy asymmetrical lo-fi Helvetica quis incididunt adipisicing. YOLO cliche minim mlkshk dreamcatcher excepteur, Austin McSweeney's.</p>
                     <p>Coded @ Kinfolk Studios in Williamsburg, Brooklyn, 2013.</p>
@@ -58,13 +62,15 @@
             </div>
         </div>
         <div class="row">
-            <div slide-toggle="#slidable-formation"
-                 id='formation'
-                 class="col-md-12"
-                 dynamic-height="1">
-                <h3>Formation</h3>
+            <div reveal-toggle="#revealable-{{vm.dropContent[2].key}}"
+                 reveal-state="vm.dropContent[2].open"
+                 class="col-md-12">
+                  <h3>
+                      <a href=""  id="{{vm.dropContent[2].key}}" class="header-link"
+                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[2].key| capitalize:1 }} </a>
+                 </h3>
             </div>
-            <div id="slidable-formation" class="col-md-9 slideable" easing="linear" duration="1s">
+            <div id="revealable-{{vm.dropContent[2].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
                 <p>Bespoke aesthetic Bushwick craft beer. Qui aesthetic butcher, cardigan ex scenester Neutra American Apparel mumblecore.</p>
                 <p>Ethical adipisicing before they sold out, sriracha Thundercats cardigan dolor deep v placeat. Flannel tattooed meggings direct trade banh mi tousled sriracha. Portland VHS ut dreamcatcher. Butcher eu irony, Banksy leggings eiusmod Pinterest hashtag Etsy asymmetrical lo-fi Helvetica quis incididunt adipisicing. YOLO cliche minim mlkshk dreamcatcher excepteur, Austin McSweeney's.</p>
                 <p>Coded @ Kinfolk Studios in Williamsburg, Brooklyn, 2013.</p>
@@ -73,13 +79,15 @@
             </div>
         </div>
         <div class="row">
-              <div slide-toggle="#slidable-germination"
-                      id='germination'
-                   class="col-md-12"
-                   dynamic-height="1">
-                  <h3>Germination</h3>
+              <div reveal-toggle="#revealable-{{vm.dropContent[3].key}}"
+                   reveal-state="vm.dropContent[3].open"
+                   class="col-md-12">
+                  <h3>
+                      <a href=""  id="{{vm.dropContent[3].key}}" class="header-link"
+                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[3].key| capitalize:1 }} </a>
+                  </h3>
                </div>
-               <div id="slidable-germination" class="col-md-9 slideable" easing="linear" duration="1s">
+               <div id="revealable-{{vm.dropContent[3].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
                     <p>Bespoke aesthetic Bushwick craft beer. Qui aesthetic butcher, cardigan ex scenester Neutra American Apparel mumblecore.</p>
                     <p>Ethical adipisicing before they sold out, sriracha Thundercats cardigan dolor deep v placeat. Flannel tattooed meggings direct trade banh mi tousled sriracha. Portland VHS ut dreamcatcher. Butcher eu irony, Banksy leggings eiusmod Pinterest hashtag Etsy asymmetrical lo-fi Helvetica quis incididunt adipisicing. YOLO cliche minim mlkshk dreamcatcher excepteur, Austin McSweeney's.</p>
                     <p>Coded @ Kinfolk Studios in Williamsburg, Brooklyn, 2013.</p>
