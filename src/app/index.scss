@@ -51,6 +51,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 
+.list-inline {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.list-inline li {
+  display: table-cell;
+  text-align: center;
+}
 .dashboard-stage  .page-header{
      border-bottom-color:$forest-bark;
 }

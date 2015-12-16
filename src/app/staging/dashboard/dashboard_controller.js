@@ -26,10 +26,10 @@
      //should be base on numerical indexes
 
 
-     vm.dropContent[0] =  { key:'overview', open:false};
-     vm.dropContent[1] =  { key:'pollination', open:false};
-     vm.dropContent[2] =  { key:'formation', open:false};
-     vm.dropContent[3] =  { key:'germination', open:false};
+     vm.dropContent[0] =  { index:0, key:'overview', open:false, mastView:false};
+     vm.dropContent[1] =  { index:1, key:'pollination', open:false, mastView:false};
+     vm.dropContent[2] =  { index:2, key:'formation', open:false, mastView:false};
+     vm.dropContent[3] =  { index:3, key:'germination', open:false, mastView:false};
 
      function updateOpenKey(key){
        var currentKey = openKey;
@@ -42,6 +42,35 @@
             if(item.key === currentKey && item.open) {
                 item.open = false;
                 console.log("item.key ="+item.key +" CLOSE =",item);
+            }
+            switch(openKey){
+                case 'overview':
+                    vm.dropContent[0].mastView = false;
+                    vm.dropContent[1].mastView = false;
+                    vm.dropContent[2].mastView = false;
+                    vm.dropContent[3].mastView = false;
+                    break;
+                case 'pollination':
+                    vm.dropContent[0].mastView = true;
+                    vm.dropContent[1].mastView = false;
+                    vm.dropContent[2].mastView = false;
+                    vm.dropContent[3].mastView = false;
+                    break;
+                case 'formation':
+                    vm.dropContent[0].mastView = true;
+                    vm.dropContent[1].mastView = true;
+                    vm.dropContent[2].mastView = false;
+                    vm.dropContent[3].mastView = false;
+
+                    break;
+                case 'germination':
+                    vm.dropContent[0].mastView = true;
+                    vm.dropContent[1].mastView = true;
+                    vm.dropContent[2].mastView = true;
+                    vm.dropContent[3].mastView = false;
+                    break;
+
+
             }
         });
 

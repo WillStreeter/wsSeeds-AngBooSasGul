@@ -34,7 +34,28 @@
           templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
           controller: 'DashboardCtrl',
           controllerAs:'vm'
-        }
+        },
+         dashboardPollinationState: {
+              name: 'dashboardPollination',
+              url: '/dashboard/pollination',
+              templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
+              controller: 'DashboardCtrl',
+              controllerAs:'vm'
+         },
+          dashboardFormationState: {
+              name: 'dashboardFormation',
+              url: '/dashboard/formation',
+              templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
+              controller: 'DashboardCtrl',
+              controllerAs:'vm'
+          },
+          dashboardGerminationState: {
+              name: 'dashboardGermination',
+              url: '/dashboard/germination',
+              templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
+              controller: 'DashboardCtrl',
+              controllerAs:'vm'
+          }
       })
   .config(cfgMainStageRoutes);
    // inject cfgMainStageRoutes dependencies
@@ -46,7 +67,9 @@
     $routeProvider
          .when(routeStates.homeState.url, routeStates.homeState)
         . when(routeStates.profileState.url, routeStates.profileState)
-        . when(routeStates.dashboardState.url, routeStates.dashboardState);
+        . when(routeStates.dashboardState.url, routeStates.dashboardState)
+        . when(routeStates.dashboardPollinationState.url, routeStates.dashboardPollinationState)
+        . when(routeStates.dashboardFormationState.url, routeStates.dashboardFormationState);
 
    }
 

@@ -2,17 +2,34 @@
 <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Pollination</a></li>
-            <li><a href="#">Formation</a></li>
-            <li><a href="#">Germination</a></li>
+            <li class="active"><a href="#">{{vm.dropContent[0].key| capitalize:1}} <span class="sr-only">(current)</span></a></li>
+            <li><a ng-ref="{{'#/'+vm.dropContent[3].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></li>
+            <li><a ng-ref="{{'#/'+vm.dropContent[3].key}}">{{vm.dropContent[2].key| capitalize:1}} </a></li>
+            <li><a ng-ref="{{'#/'+vm.dropContent[3].key}}"">{{vm.dropContent[3].key| capitalize:1}} </a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-md-10  main">
         <h1 class="page-header">Seed Growth</h1>
         <div class="row">
+            <ul class="list-inline">
+                <li class="active">
+                    <h4 ng-show="vm.dropContent[0].mastView"><a href="#">{{vm.dropContent[0].key| capitalize:1}} </a></h4>
+                </li>
+                <li>
+                    <h4 ng-show="vm.dropContent[1].mastView"><a href="#">{{vm.dropContent[1].key| capitalize:1}} </a></h4>
+                </li>
+                <li>
+                    <h4 ng-show="vm.dropContent[2].mastView"><a href="#">{{vm.dropContent[2].key| capitalize:1}}  </a></h4>
+                </li>
+                <li>
+                    <h4 ng-show="vm.dropContent[3].mastView"><a href="#">{{vm.dropContent[3].key| capitalize:1}}  </a></h4>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
             <div reveal-toggle="#revealable-{{vm.dropContent[0].key}}"
                  reveal-state="vm.dropContent[0].open"
+                 ng-hide="vm.dropContent[0].mastView"
                  class="col-md-12">
                   <h3>
                       <a href=""  id="{{vm.dropContent[0].key}}" class="header-link"
@@ -47,6 +64,7 @@
         <div class="row">
             <div reveal-toggle="#revealable-{{vm.dropContent[1].key}}"
                  reveal-state="vm.dropContent[1].open"
+                 ng-hide="vm.dropContent[1].mastView"
                  class="col-md-12">
                   <h3>
                       <a href=""  id="{{vm.dropContent[1].key}}" class="header-link"
@@ -63,6 +81,7 @@
         </div>
         <div class="row">
             <div reveal-toggle="#revealable-{{vm.dropContent[2].key}}"
+                 ng-hide="vm.dropContent[2].mastView"
                  reveal-state="vm.dropContent[2].open"
                  class="col-md-12">
                   <h3>
@@ -80,6 +99,7 @@
         </div>
         <div class="row">
               <div reveal-toggle="#revealable-{{vm.dropContent[3].key}}"
+                   ng-hide="vm.dropContent[3].mastView"
                    reveal-state="vm.dropContent[3].open"
                    class="col-md-12">
                   <h3>
