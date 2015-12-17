@@ -18,15 +18,29 @@
       .module('wsSeed.user.module')
       .factory('UserRemoting', UserRemoting);
 
-  UserRemoting.$inject = ['$resource'];
+  UserRemoting.$inject = ['$http'];
 
   function UserRemoting($resource) {
-      var LoginResource = $resource("/api/login");
-      var serviceObject = {loginUser: function (userName, password){
-           //this promise will be fulfilled when the response is retrieved for this call
-          return LoginResource.save({}, {userName: userName, password: password}).$promise;
-      }};
-      return serviceObject;
+
+      return {
+          getUserProfile: getUserProfile
+      };
+
+      function getUserProfile(endPoint) {
+          return $http.get(endPoint)
+              .then(getUserProfileComplete)
+              .catch(getDashBoardError);
+
+          function getUserProfileComplete(response) {
+              return response;
+          }
+
+          function getUserProfileError(error) {
+              //no error.. from bad call
+              //var myError = new Error(["api.error"]);
+              return error;
+          }
+      };
   }
 
 })();

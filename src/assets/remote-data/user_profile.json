@@ -1,0 +1,12 @@
+{
+  "profile": {
+              "name": "willSonic",
+              "email": "bisobop#beadybop.com",
+              "birthdate": 12009600,
+              "gender": "male",
+              "comments": 500,
+              "likes": 1500,
+              "profile_pic":"/assets/images/monchichi.jpeg",
+              "create_data": 12009600
+             }
+}

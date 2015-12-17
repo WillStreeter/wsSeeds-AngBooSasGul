@@ -15,6 +15,7 @@ angular
         };
 
         function getDashBoard(endPoint) {
+
             return $http.get(endPoint)
                 .then(getDashBoardComplete)
                 .catch(getDashBoardError);

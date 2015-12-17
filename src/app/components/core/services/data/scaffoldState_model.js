@@ -15,14 +15,10 @@ angular
         var _dashboardData;
 
         var services = {
-            getDashBoardData: getDashBoardData,
-            getEndPoint: getEndPoint
+            getDashBoardData: getDashBoardData
         };
         return services;
 
-        function getEndPoint(){
-              return DASHBOARD_ENDPOINT;
-        }
         function getDashBoardData() {
             /* */
             if(!_dashboardData){

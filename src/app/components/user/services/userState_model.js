@@ -40,23 +40,35 @@
       .module('wsSeed.user.module')
       .factory('UserStateModel', UserStateModel);
 
-  UserStateModel.$inject = [];
+       UserStateModel.$inject = [];
 
-  function UserStateModel() {
-    var userModel=null;
+      function UserStateModel() {
+          var USERPORIFLE_ENDPOINT = '/assets/remote-data/user_profile.json';
+          var _userProfile;
 
+          var services = {
+              getUserProfile: getUserProfile
+          };
 
-    return {
-        getUser: function(){
-            return userModel;
-        },
+          return services;
 
-        setUser: function(user){
-            userModel = user;
-        }
+          function getUserProfile() {
+              /* */
+              if(!_userProfile){
+                  return scaffoldingRemoteServices.getDashBoard(USERPORIFLE_ENDPOINT).then(
+                      function(result){
+                          console.log('scaffoldingRemoteServices result=',result);
+                          if(result){
+                              console.log(result);
+                          }else{
+                              _userProfile = result;
+                          }
+                      });
+              }else{
+                  return _userProfile;
+              }
 
-    };
-
+          }
   }
 
 })();
