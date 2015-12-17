@@ -1,7 +1,9 @@
 $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
 $font-stack: Satisfy, cursive;
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 /* Overwrite bootstrap global variables */
 // injector:global
 // endinjector
@@ -27,13 +29,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .home-splash .container h1,
 .home-splash .container h2{
    font-family:$font-stack;
-   color:$mountain-water;
+   color:darken($mountain-water, 10%);
 }
 
 .home-splash{
   margin-top:$navbar-height *2;
 }
-
 
 .home-splash .jumbotron {
   background-color: $forest-fall;
@@ -50,6 +51,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
    font-size:30px;
 }
 
+.dashboard-stage .seed-billboard{
+   min-height:300px;
+   img{
+      height:200px;
+      width:200px;
+   }
+}
 
 .list-inline {
   display: table;
@@ -61,25 +69,38 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   display: table-cell;
   text-align: center;
 }
+
 .dashboard-stage  .page-header{
+     margin: 35px 0 28px;
      border-bottom-color:$forest-bark;
 }
 .dashboard-stage .main{
-  margin-top:$navbar-height *2;
+  margin-top:$navbar-height *1.5;
 }
 .dashboard-stage .main h1{
    font-family:$font-stack;
 }
 .dashboard-stage .sidebar{
-  margin-top:$navbar-height *5;
+   margin-top:$navbar-height *5;
   .nav-sidebar{
     a{
-      color:darken($forest-leaf, 10%);
-      font-weight:200;
+      color:darken($forest-dirt, 4%);
+      font-weight:300;
       font-size:24px;
     }
     a:hover{
       background-color: darken($forest-summer, 5%);
+      color:lighten($forest-dirt, 4%);
+    }
+    a:focus{
+      background-color:transparent;
+      color:darken($mountain-water, 5%);
+      outline: none;
+    }
+    a:active{
+      background-color:transparent;
+      color:darken($mountain-water, 5%);
+      font-weight:300;
     }
   }
 }
@@ -138,5 +159,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .leaf-btn{
-  @include button-variant(darken( $forest-dirt,3%), darken($forest-moss, 5%), $forest-fall);
+  @include button-variant(darken( $forest-dirt,3%), darken($forest-moss, 1%), $forest-moss);
+  &:hover,
+  &:focus{
+      border-color:darken($forest-moss, 1%);
+      background-color:$forest-moss;
+      color:$forest-dirt;
+  }
+}
+.leaf-btn:active:focus,
+.leaf-btn:focus:active,
+.leaf-btn:active:hover,
+.leaf-btn:active:active
+.leaf-btn.active:focus,
+.leaf-btn.focus:active,
+.leaf-btn.active:hover,
+.leaf-btn.active:active{
+      border-color:darken($forest-moss, 5%);
+      background-color:darken($forest-moss, 2%);
+      color:$forest-dirt;
 }

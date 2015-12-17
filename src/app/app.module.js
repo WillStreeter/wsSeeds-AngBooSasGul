@@ -9,10 +9,10 @@
     'ngRoute',
     'ngResource',
     'ui.bootstrap',
+    'wsSeed.app.core.module',
     'wsSeed.utilFilters.module',
     'wsSeed.utilDirectives.module',
     'wsSeed.mainStage.module',
-    'wsSeed.app.core.module',
     'wsSeed.navbar.module',
     'wsSeed.user.module'
   ]);

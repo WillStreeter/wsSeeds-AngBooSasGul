@@ -12,7 +12,8 @@
    * State definitions and configuration for the user module
    */
 
-  angular.module('wsSeed.mainStage.module')
+  angular
+  .module('wsSeed.mainStage.module')
   .constant( 'routeStates', {
         homeState: {
           name: 'home',
@@ -31,45 +32,47 @@
         dashboardState: {
           name: 'dashboard',
           url: '/dashboard',
+          reloadOnSearch:false,
           templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
           controller: 'DashboardCtrl',
-          controllerAs:'vm'
+          controllerAs:'vm',
+          resolve:{
+                 dashboardData:scaffoldStateModelService
+           }
         },
-         dashboardPollinationState: {
-              name: 'dashboardPollination',
-              url: '/dashboard/pollination',
+         dashboardSeedlingState: {
+              name: 'dashboardSeedling',
+              url: '/dashboard/:seedling',
+              reloadOnSearch:false,
               templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
               controller: 'DashboardCtrl',
               controllerAs:'vm'
-         },
-          dashboardFormationState: {
-              name: 'dashboardFormation',
-              url: '/dashboard/formation',
-              templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
-              controller: 'DashboardCtrl',
-              controllerAs:'vm'
-          },
-          dashboardGerminationState: {
-              name: 'dashboardGermination',
-              url: '/dashboard/germination',
-              templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
-              controller: 'DashboardCtrl',
-              controllerAs:'vm'
-          }
+         }
       })
-  .config(cfgMainStageRoutes);
+    .config(cfgMainStageRoutes)
+
+    function scaffoldStateModelService(scaffoldStateModel){
+      var reulst =scaffoldStateModel.getDashBoardData();
+      console.log("result =="+reulst);
+      return reulst;
+    }
+
+
    // inject cfgMainStageRoutes dependencies
-   cfgMainStageRoutes.$inject = ['$routeProvider', 'routeStates'];
+     cfgMainStageRoutes.$inject = ['$routeProvider', 'routeStates','$locationProvider'];
 
    // route config function configuring the passed routeStates to $routeProvider
-   function cfgMainStageRoutes($routeProvider, routeStates) {
+   function cfgMainStageRoutes($routeProvider, routeStates, $locationProvider) {
 
-    $routeProvider
-         .when(routeStates.homeState.url, routeStates.homeState)
-        . when(routeStates.profileState.url, routeStates.profileState)
-        . when(routeStates.dashboardState.url, routeStates.dashboardState)
-        . when(routeStates.dashboardPollinationState.url, routeStates.dashboardPollinationState)
-        . when(routeStates.dashboardFormationState.url, routeStates.dashboardFormationState);
+             //console.log(scaffoldStateModel.service.getEndPoint())
+            $routeProvider
+                 .when(routeStates.homeState.url, routeStates.homeState)
+                . when(routeStates.profileState.url, routeStates.profileState)
+                . when(routeStates.dashboardState.url, routeStates.dashboardState)
+                . when(routeStates.dashboardSeedlingState.url, routeStates.dashboardSeedlingState);
+
+                 $locationProvider.html5Mode(true);
+
 
    }
 

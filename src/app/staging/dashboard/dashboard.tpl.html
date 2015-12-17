@@ -1,59 +1,56 @@
-<div class="container dashboard-stage" >
-<div class="row">
+<div class="container dashboard-stage"   ng-cloak>
+  <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
-        <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">{{vm.dropContent[0].key| capitalize:1}} <span class="sr-only">(current)</span></a></li>
-            <li><a ng-ref="{{'#/'+vm.dropContent[3].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></li>
-            <li><a ng-ref="{{'#/'+vm.dropContent[3].key}}">{{vm.dropContent[2].key| capitalize:1}} </a></li>
-            <li><a ng-ref="{{'#/'+vm.dropContent[3].key}}"">{{vm.dropContent[3].key| capitalize:1}} </a></li>
+        <ul class="nav nav-sidebar" ng-cloak>
+            <li class="active"><a href="/dashboard">{{vm.dropContent[0].key| capitalize:1}} <span class="sr-only">(current)</span></a></li>
+            <li><a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></li>
+            <li><a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}">{{vm.dropContent[2].key| capitalize:1}} </a></li>
+            <li><a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}">{{vm.dropContent[3].key| capitalize:1}} </a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-md-10  main">
         <h1 class="page-header">Seed Growth</h1>
-        <div class="row">
-            <ul class="list-inline">
-                <li class="active">
-                    <h4 ng-show="vm.dropContent[0].mastView"><a href="#">{{vm.dropContent[0].key| capitalize:1}} </a></h4>
-                </li>
-                <li>
-                    <h4 ng-show="vm.dropContent[1].mastView"><a href="#">{{vm.dropContent[1].key| capitalize:1}} </a></h4>
-                </li>
-                <li>
-                    <h4 ng-show="vm.dropContent[2].mastView"><a href="#">{{vm.dropContent[2].key| capitalize:1}}  </a></h4>
-                </li>
-                <li>
-                    <h4 ng-show="vm.dropContent[3].mastView"><a href="#">{{vm.dropContent[3].key| capitalize:1}}  </a></h4>
-                </li>
-            </ul>
-        </div>
+        <ul class="list-inline" ng-cloak>
+            <li class="active" ng-cloak>
+                <h4 ng-show="vm.dropContent[0].mastView"><a href="/dashboard">{{vm.dropContent[0].key| capitalize:1}} </a></h4>
+            </li>
+            <li ng-cloak>
+                <h4 ng-show="vm.dropContent[1].mastView"><a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></h4>
+            </li>
+            <li  ng-cloak>
+                <h4 ng-show="vm.dropContent[2].mastView"><a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}">{{vm.dropContent[2].key| capitalize:1}}  </a></h4>
+            </li>
+            <li ng-cloak>
+                <h4 ng-show="vm.dropContent[3].mastView"><a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}">{{vm.dropContent[3].key| capitalize:1}}  </a></h4>
+            </li>
+        </ul>
         <div class="row">
             <div reveal-toggle="#revealable-{{vm.dropContent[0].key}}"
                  reveal-state="vm.dropContent[0].open"
                  ng-hide="vm.dropContent[0].mastView"
-                 class="col-md-12">
+                 class="col-sm-12" ng-cloak>
                   <h3>
-                      <a href=""  id="{{vm.dropContent[0].key}}" class="header-link"
-                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[0].key| capitalize:1 }} </a>
+                      <a href="/dashboard"  id="{{vm.dropContent[0].key}}" class="header-link">{{vm.dropContent[0].key| capitalize:1 }} </a>
                  </h3>
             </div>
-            <div id="revealable-{{vm.dropContent[0].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
-                <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-3 placeholder">
+            <div id="revealable-{{vm.dropContent[0].key}}" class="col-sm-12 dropreveal" easing="linear" duration=".5s" ng-cloak>
+                <div class="row seed-billboard">
+                    <div class="col-xs-6 col-sm-3">
                         <img src="assets/images/angular.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4>AngularJs </h4>
                         <span class="text-muted">AngularJs 1.4.*</span>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
+                    <div class="col-xs-6 col-sm-3">
                         <img src="assets/images/ui-bootstrap.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4>AngularUI</h4>
                         <span class="text-muted">  (ui.bootstrap) 0.14.*</span>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
+                    <div class="col-xs-6 col-sm-3">
                         <img src="/assets/images/sass.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4>SASS</h4>
                         <span class="text-muted">(SASS for Bootstrap)</span>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
+                    <div class="col-xs-6 col-sm-3">
                         <img src="assets/images/gulp.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4>GULP</h4>
                         <span class="text-muted">(yeoman, travis)</span>
@@ -65,13 +62,12 @@
             <div reveal-toggle="#revealable-{{vm.dropContent[1].key}}"
                  reveal-state="vm.dropContent[1].open"
                  ng-hide="vm.dropContent[1].mastView"
-                 class="col-md-12">
+                 class="col-sm-12" ng-cloak>
                   <h3>
-                      <a href=""  id="{{vm.dropContent[1].key}}" class="header-link"
-                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[1].key| capitalize:1 }} </a>
+                      <a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}" class="header-link">{{vm.dropContent[1].key| capitalize:1 }} </a>
                  </h3>
             </div>
-            <div id="revealable-{{vm.dropContent[1].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
+            <div id="revealable-{{vm.dropContent[1].key}}" class="col-sm-12 dropreveal" easing="linear" duration=".5s" ng-cloak>
                     <p>Bespoke aesthetic Bushwick craft beer. Qui aesthetic butcher, cardigan ex scenester Neutra American Apparel mumblecore.</p>
                     <p>Ethical adipisicing before they sold out, sriracha Thundercats cardigan dolor deep v placeat. Flannel tattooed meggings direct trade banh mi tousled sriracha. Portland VHS ut dreamcatcher. Butcher eu irony, Banksy leggings eiusmod Pinterest hashtag Etsy asymmetrical lo-fi Helvetica quis incididunt adipisicing. YOLO cliche minim mlkshk dreamcatcher excepteur, Austin McSweeney's.</p>
                     <p>Coded @ Kinfolk Studios in Williamsburg, Brooklyn, 2013.</p>
@@ -83,13 +79,12 @@
             <div reveal-toggle="#revealable-{{vm.dropContent[2].key}}"
                  ng-hide="vm.dropContent[2].mastView"
                  reveal-state="vm.dropContent[2].open"
-                 class="col-md-12">
+                 class="col-sm-12" ng-cloak>
                   <h3>
-                      <a href=""  id="{{vm.dropContent[2].key}}" class="header-link"
-                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[2].key| capitalize:1 }} </a>
+                      <a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}" class="header-link">{{vm.dropContent[2].key| capitalize:1 }} </a>
                  </h3>
             </div>
-            <div id="revealable-{{vm.dropContent[2].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
+            <div id="revealable-{{vm.dropContent[2].key}}" class="col-sm-12 dropreveal" easing="linear" duration=".5s" ng-cloak>
                 <p>Bespoke aesthetic Bushwick craft beer. Qui aesthetic butcher, cardigan ex scenester Neutra American Apparel mumblecore.</p>
                 <p>Ethical adipisicing before they sold out, sriracha Thundercats cardigan dolor deep v placeat. Flannel tattooed meggings direct trade banh mi tousled sriracha. Portland VHS ut dreamcatcher. Butcher eu irony, Banksy leggings eiusmod Pinterest hashtag Etsy asymmetrical lo-fi Helvetica quis incididunt adipisicing. YOLO cliche minim mlkshk dreamcatcher excepteur, Austin McSweeney's.</p>
                 <p>Coded @ Kinfolk Studios in Williamsburg, Brooklyn, 2013.</p>
@@ -101,13 +96,12 @@
               <div reveal-toggle="#revealable-{{vm.dropContent[3].key}}"
                    ng-hide="vm.dropContent[3].mastView"
                    reveal-state="vm.dropContent[3].open"
-                   class="col-md-12">
+                   class="col-sm-12" ng-cloak>
                   <h3>
-                      <a href=""  id="{{vm.dropContent[3].key}}" class="header-link"
-                        ng-click="vm.viewContentClick($event)">{{vm.dropContent[3].key| capitalize:1 }} </a>
+                      <a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}" class="header-link" >{{vm.dropContent[3].key| capitalize:1 }} </a>
                   </h3>
                </div>
-               <div id="revealable-{{vm.dropContent[3].key}}" class="col-md-9 dropreveal" easing="linear" duration="1s">
+               <div id="revealable-{{vm.dropContent[3].key}}" class="col-sm-12 dropreveal" easing="linear" duration=".5s" ng-cloak>
                     <p>Bespoke aesthetic Bushwick craft beer. Qui aesthetic butcher, cardigan ex scenester Neutra American Apparel mumblecore.</p>
                     <p>Ethical adipisicing before they sold out, sriracha Thundercats cardigan dolor deep v placeat. Flannel tattooed meggings direct trade banh mi tousled sriracha. Portland VHS ut dreamcatcher. Butcher eu irony, Banksy leggings eiusmod Pinterest hashtag Etsy asymmetrical lo-fi Helvetica quis incididunt adipisicing. YOLO cliche minim mlkshk dreamcatcher excepteur, Austin McSweeney's.</p>
                     <p>Coded @ Kinfolk Studios in Williamsburg, Brooklyn, 2013.</p>
@@ -118,9 +112,7 @@
         </div>
 
   </div>
-    <footer>
-        <p>&copy; 2015 Company, Inc.</p>
-      </footer>
-   </div>
-</div></div>
+  <footer>
+       <p>&copy; wsSeed Factory</p>
+  </footer>
 </div>

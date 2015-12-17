@@ -13,14 +13,14 @@
    */
 
   angular
-  .module('wsSeed.app.core.module', ['ngRoute'])
+  .module('wsSeed.app.core.module')
   .config(appCoreConfig);
 
-   appCoreConfig.$inject = ['$routeProvider', '$authProvider', '$httpProvider'];
+   appCoreConfig.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
 
-   function appCoreConfig($routeProvider, $authProvider,  $httpProvider) {
-
+   function appCoreConfig($routeProvider, $locationProvider,  $httpProvider) {
          $routeProvider.otherwise('/');
+         $locationProvider.html5Mode(true);
   }
 
 })();
