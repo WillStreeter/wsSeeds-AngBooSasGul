@@ -24,7 +24,6 @@ angular
             var dataDf = $q.defer();
             /* */
             if(!_dashboardData){
-                var dataDf = $q.defer();
                  scaffoldingRemoteServices.getDashBoard(DASHBOARD_ENDPOINT).then(
                     function(result){
                         console.log('scaffoldingRemoteServices result=',result);
@@ -33,7 +32,7 @@ angular
                  });
                  return dataDf.promise;
             }else{
-               return dataDf.resolve(_dashboardData);
+               return _dashboardData;
             }
 
         }
