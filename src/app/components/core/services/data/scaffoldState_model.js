@@ -6,9 +6,9 @@ angular
     .module('wsSeed.app.core.module')
     .factory('scaffoldStateModel', scaffoldStateModel);
 
-    scaffoldStateModel.$inject = ['scaffoldingRemoteServices'];
+    scaffoldStateModel.$inject = ['$q','scaffoldingRemoteServices'];
 
-    function scaffoldStateModel(scaffoldingRemoteServices){
+    function scaffoldStateModel($q, scaffoldingRemoteServices){
 
         var DASHBOARD_ENDPOINT = '/assets/remote-data/dasboard_layout.json';
 
@@ -17,22 +17,23 @@ angular
         var services = {
             getDashBoardData: getDashBoardData
         };
+
         return services;
 
         function getDashBoardData() {
+            var dataDf = $q.defer();
             /* */
             if(!_dashboardData){
-              return scaffoldingRemoteServices.getDashBoard(DASHBOARD_ENDPOINT).then(
-                 function(result){
+                var dataDf = $q.defer();
+                 scaffoldingRemoteServices.getDashBoard(DASHBOARD_ENDPOINT).then(
+                    function(result){
                         console.log('scaffoldingRemoteServices result=',result);
-                     if(result){
-                        console.log(result);
-                     }else{
                        _dashboardData = result;
-                     }
+                       dataDf.resolve(_dashboardData);
                  });
+                 return dataDf.promise;
             }else{
-               return _dashboardData;
+               return dataDf.resolve(_dashboardData);
             }
 
         }

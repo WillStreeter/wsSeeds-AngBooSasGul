@@ -46,15 +46,16 @@
               reloadOnSearch:false,
               templateUrl: 'app/staging/dashboard/dashboard.tpl.html',
               controller: 'DashboardCtrl',
-              controllerAs:'vm'
+              controllerAs:'vm',
+              resolve:{
+                     dashboardData:scaffoldStateModelService
+               }
          }
       })
     .config(cfgMainStageRoutes)
 
     function scaffoldStateModelService(scaffoldStateModel){
-      var reulst =scaffoldStateModel.getDashBoardData();
-      console.log("result =="+reulst);
-      return reulst;
+      return scaffoldStateModel.getDashBoardData();
     }
 
 
@@ -64,7 +65,6 @@
    // route config function configuring the passed routeStates to $routeProvider
    function cfgMainStageRoutes($routeProvider, routeStates, $locationProvider) {
 
-             //console.log(scaffoldStateModel.service.getEndPoint())
             $routeProvider
                  .when(routeStates.homeState.url, routeStates.homeState)
                 . when(routeStates.profileState.url, routeStates.profileState)

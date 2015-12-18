@@ -21,12 +21,10 @@ angular
                 .catch(getDashBoardError);
 
             function getDashBoardComplete(response) {
-                return response;
+                return response.data;
             }
 
             function getDashBoardError(error) {
-                 //no error.. from bad call
-                 //var myError = new Error(["api.error"]);
                  return error;
             }
         };
