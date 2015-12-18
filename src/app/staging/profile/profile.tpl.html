@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-9">
-          <div class="row">
-            <div class="col-md-12 lead">wsSeed Master<hr></div>
+<div class="container profile-stage">
+          <div class="row main">
+            <div class="col-md-12">
+                <h2>wsSeed Master</h2><hr>
+            </div>
           </div>
           <div class="row">
 			<div class="col-md-4 text-center">
@@ -13,22 +13,22 @@
             <div class="col-md-8">
               <div class="row">
                 <div class="col-md-12">
-                  <h1 class="only-bottom-margin">willSonic</h1>
+                  <h1 class="only-bottom-margin">{{vm.userProfile.name}}</h1>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <span class="text-muted">Email:</span> email@test.com<br>
-                  <span class="text-muted">Birth date:</span> 01.01.2001<br>
-                  <span class="text-muted">Gender:</span> male<br><br>
-                  <small class="text-muted">Created: 12.13.2015</small>
+                  <span class="text-muted">Email:</span>{{vm.userProfile.email}}<br>
+                  <span class="text-muted">Birth date:</span>&nbsp;{{vm.userProfile.birthdate * 1000 | date:'MMM d, y'}}<br>
+                  <span class="text-muted">Gender:</span>&nbsp;{{vm.userProfile.gender}}<br><br>
+                  <small class="text-muted">Created :&nbsp;{{ vm.userProfile.create_data * 1000 | date:'MMM d, y'}}</small>
                 </div>
                 <div class="col-md-6">
                   <div class="activity-mini">
-                    <i class="glyphicon glyphicon-comment text-muted"></i> 500
+                      <p><i class="glyphicon glyphicon-comment text-muted"></i> 500</p>
                   </div>
                   <div class="activity-mini">
-                    <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
+                      <p><i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500</p>
                   </div>
                 </div>
               </div>
@@ -39,6 +39,4 @@
               <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
             </div>
           </div>
-    </div>
-   </div>
 </div>

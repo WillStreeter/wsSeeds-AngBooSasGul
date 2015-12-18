@@ -13,10 +13,19 @@
 
   .controller('ProfileCtrl', ProfileCtrl);
 
-  ProfileCtrl.$inject = ['$scope'];
+  ProfileCtrl.$inject = ['UserStateModel'];
       /* @ngInject */
-  function ProfileCtrl($scope) {
-     var vm  = this;
-     vm.viewState ='ProfileCtrl';
+  function ProfileCtrl(UserStateModel) {
+      var vm  = this;
+      vm.userProfile = [];
+
+      activate();
+
+      function activate() {
+          return UserStateModel.getUserProfileData().then(function(result) {
+              vm.userProfile = result.profile;
+              return vm.userProfile;
+          });
+      }
    }
 })();

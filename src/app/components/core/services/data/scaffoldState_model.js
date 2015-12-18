@@ -26,13 +26,13 @@ angular
             if(!_dashboardData){
                  scaffoldingRemoteServices.getDashBoard(DASHBOARD_ENDPOINT).then(
                     function(result){
-                        console.log('scaffoldingRemoteServices result=',result);
                        _dashboardData = result;
                        dataDf.resolve(_dashboardData);
-                 });
+                    }
+                 );
                  return dataDf.promise;
             }else{
-               return _dashboardData;
+                 return _dashboardData;
             }
 
         }

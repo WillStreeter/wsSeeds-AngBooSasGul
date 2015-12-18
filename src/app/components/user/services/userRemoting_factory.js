@@ -16,11 +16,11 @@
 
   angular
       .module('wsSeed.user.module')
-      .factory('UserRemoting', UserRemoting);
+      .factory('UserRemotingService', UserRemoting);
 
   UserRemoting.$inject = ['$http'];
 
-  function UserRemoting($resource) {
+  function UserRemoting($http) {
 
       return {
           getUserProfile: getUserProfile
@@ -29,15 +29,13 @@
       function getUserProfile(endPoint) {
           return $http.get(endPoint)
               .then(getUserProfileComplete)
-              .catch(getDashBoardError);
+              .catch(getUserProfileError);
 
           function getUserProfileComplete(response) {
-              return response;
+              return response.data;
           }
 
           function getUserProfileError(error) {
-              //no error.. from bad call
-              //var myError = new Error(["api.error"]);
               return error;
           }
       };
