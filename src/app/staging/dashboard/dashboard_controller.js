@@ -21,7 +21,7 @@
      vm.viewState    = 'DashboardCtrl';
      vm.dropContent  = angular.fromJson(dashboardData.dashboard);
 
-     angular.forEach(vm.dropContent, function(item, key){
+     angular.forEach(vm.dropContent, function(item){
              item.open = false;
              item.mastVeiw = false;
      });
@@ -76,13 +76,13 @@
      $scope.$on('$routeUpdate', function () {
           //console.log("$routeParams.seedling"+$routeParams.seedling)
          var newVeiw = $routeParams.seedling=== undefined?'overview':$routeParams.seedling;
-         if(newVeiw!= openKey){
+         if(newVeiw!== openKey){
              updateOpenKey(newVeiw);
          }
      });
 
      //initialize first droppable content
-     if($routeParams.seedling != undefined){
+     if($routeParams.seedling !== undefined){
          openKey = $routeParams.seedling;
          updateOpenKey(openKey);
      }else{

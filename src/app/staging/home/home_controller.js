@@ -13,9 +13,9 @@
 
   .controller('HomeCtrl', HomeCtrl);
 
-  HomeCtrl.$inject = ['$scope'];
+  HomeCtrl.$inject = [];
       /* @ngInject */
-  function HomeCtrl($scope) {
+  function HomeCtrl() {
      var vm  = this;
      vm.viewState ='HomeCtrl';
    }

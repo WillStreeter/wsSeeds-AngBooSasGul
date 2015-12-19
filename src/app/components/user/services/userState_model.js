@@ -13,26 +13,7 @@
    * Service for app wide event notification.
    *
    *
-   * data{
-   *    type:'name of notification',
-   *    value:{}
-   * }
    *
-   *
-   ?*
-   *  use Example
-   *  $scope.notifications
-   *
-     $scope.notify = function() {
-      NotifyingService.publish( {
-                                     type:notifyTypes().AUTH_STATE
-                                     data:{loggedIn:false};
-                                });
-      };
-   *
-   * NotificationPubSub.subscribe($scope, function pubEvent() {
-   *     $scope.notifications++;
-   *});
    *
    *
    */
@@ -55,9 +36,9 @@
           return services;
 
           function getUserProfileData() {
-              var dataDf = $q.defer();
               /* */
               if(!_userProfile){
+                  var dataDf = $q.defer();
                   UserRemotingService.getUserProfile(USERPORIFLE_ENDPOINT).then(
                       function(result){
                               _userProfile = result;
@@ -66,10 +47,11 @@
                   );
                   return dataDf.promise;
               }else{
-                  return  dataDf.resolve(_userProfile);
+                  //return $q.when( _userProfile );    // angular 1.2+
+                  return $q.resolve( _userProfile ); // angular 1.4+, alias to `when` to match ES6
               }
 
           }
-  }
+      }
 
 })();

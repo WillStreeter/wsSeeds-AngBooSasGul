@@ -12,14 +12,15 @@
       .module('wsSeed.user.module')
       .controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['$uibModalInstance', 'UserRemoting', '$location'];
+  //LoginCtrl.$inject = ['$uibModalInstance', 'UserRemoting', '$location'];
+  LoginCtrl.$inject = ['$uibModalInstance'];
   /* @ngInject */
-  function LoginCtrl($uibModalInstance, UserRemoting, $location) {
-
+  //function LoginCtrl($uibModalInstance, UserRemoting, $location) {
+   function LoginCtrl($uibModalInstance) {
       var vm = this;
 
       vm.modalInstance = $uibModalInstance;
-      vm.login = function() {
+      /*vm.login = function() {
           UserRemoting.loginUser(vm.email, vm.password).then(
               function (loginResult) {
                   $location.path('/');
@@ -29,7 +30,7 @@
                   $location.path('/');
                   vm.modalInstance.close();
               });
-      }
+      };*/
    /*
     *
     * Used with third party authentications like twitter, google+, facebook, etc.

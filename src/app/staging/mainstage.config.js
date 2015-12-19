@@ -52,7 +52,7 @@
                }
          }
       })
-    .config(cfgMainStageRoutes)
+    .config(cfgMainStageRoutes);
 
     function scaffoldStateModelService(scaffoldStateModel){
       return scaffoldStateModel.getDashBoardData();

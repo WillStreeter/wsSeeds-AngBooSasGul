@@ -12,17 +12,17 @@
    * State definitions and configuration for the user module
    */
 
-  angular.module('wsSeed.user.module')
-  .constant( 'routeStates', {})
-  .config(cfgUserAccountRoute);
+  angular.module('wsSeed.user.module');
+  //.constant( 'routeStates', {})
+  //.config(cfgUserAccountRoute);
    // inject cfgUserAccountRoute dependencies
-   cfgUserAccountRoute.$inject = ['$routeProvider', 'routeStates'];
+   //cfgUserAccountRoute.$inject = ['$routeProvider', 'routeStates'];
 
    // route config function configuring the passed $stateProvider
-   function cfgUserAccountRoute($routeProvider, routeStates) {
+   //function cfgUserAccountRoute($routeProvider, routeStates) {
 
 
-   }
+   //}
 
 
 })();

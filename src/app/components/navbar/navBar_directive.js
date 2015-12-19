@@ -35,7 +35,7 @@
                  vm.viewState = $route.current.name;
            }
 
-           $rootScope.$on("$routeChangeStart",   function (event, current) {
+           $rootScope.$on('$routeChangeStart',   function (event, current) {
                  if(current && current.name){
                      vm.viewState = current.name;
                  }

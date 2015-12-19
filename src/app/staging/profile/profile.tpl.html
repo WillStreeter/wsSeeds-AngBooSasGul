@@ -1,42 +1,57 @@
 <div class="container profile-stage">
-          <div class="row main">
-            <div class="col-md-12">
-                <h2>wsSeed Master</h2><hr>
-            </div>
-          </div>
-          <div class="row">
-			<div class="col-md-4 text-center">
+    <div class="row main">
+       <div class="col-md-12">
+          <h2>wsSeed Ster,</h2>
+       </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4 text-center">
               <img class="img-circle avatar avatar-original" width="200" height="200" style="-webkit-user-select:none;
-              display:block; margin:auto;" src="assets/images/monchichi.jpeg">
-
-            </div>
-            <div class="col-md-8">
+              display:block; margin:auto;" ng-src="{{vm.userProfile.profile_pic}}">
+        </div>
+        <div class="col-md-8">
               <div class="row">
-                <div class="col-md-12">
-                  <h1 class="only-bottom-margin">{{vm.userProfile.name}}</h1>
-                </div>
+                   <div class="col-md-12">
+                      <h1 class="profile-name">{{vm.userProfile.name}}
+                         <small>
+                              <i class="glyphicon glyphicon-comment text-muted"></i>{{vm.userProfile.comments}}
+                              &nbsp;&nbsp;
+                              <i class="glyphicon glyphicon-thumbs-up text-muted"></i>{{vm.userProfile.likes}}
+                          </small>
+                     </h1>
+                   </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-                  <span class="text-muted">Email:</span>{{vm.userProfile.email}}<br>
-                  <span class="text-muted">Birth date:</span>&nbsp;{{vm.userProfile.birthdate * 1000 | date:'MMM d, y'}}<br>
-                  <span class="text-muted">Gender:</span>&nbsp;{{vm.userProfile.gender}}<br><br>
-                  <small class="text-muted">Created :&nbsp;{{ vm.userProfile.create_data * 1000 | date:'MMM d, y'}}</small>
-                </div>
-                <div class="col-md-6">
-                  <div class="activity-mini">
-                      <p><i class="glyphicon glyphicon-comment text-muted"></i> 500</p>
-                  </div>
-                  <div class="activity-mini">
-                      <p><i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500</p>
-                  </div>
-                </div>
+                    <div class="col-md-3">
+                          <label>Email :</label>
+                    </div>
+                    <div class="col-md-9">
+                         <p>{{vm.userProfile.email}}</p>
+                    </div>
+                    <div class="col-md-3">
+                          <label>Birthday :</label>
+                    </div>
+                    <div class="col-md-9">
+                         <p>{{vm.userProfile.birthdate * 1000 | date:'MMM d, y'}}</p>
+                    </div>
+                    <div class="col-md-3">
+                          <label>Gender :</label>
+                    </div>
+                    <div class="col-md-9">
+                          <p>{{vm.userProfile.gender}}</p>
+                    </div>
+                    <div class="col-md-3">
+                          <label>Start Date :</label>
+                    </div>
+                    <div class="col-md-9">
+                          <p>{{ vm.userProfile.create_data * 1000 | date:'MMM d, y'}}</p>
+                    </div>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
-            </div>
-          </div>
+    </div>
+    </div>
+    <hr>
+    <div class="col-md-12">
+             <button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+    </div>
 </div>

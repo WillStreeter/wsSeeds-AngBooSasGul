@@ -16,9 +16,9 @@
   .module('wsSeed.app.core.module')
   .config(appCoreConfig);
 
-   appCoreConfig.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
+   appCoreConfig.$inject = ['$routeProvider', '$locationProvider'];
 
-   function appCoreConfig($routeProvider, $locationProvider,  $httpProvider) {
+   function appCoreConfig($routeProvider, $locationProvider) {
          $routeProvider.otherwise('/');
          $locationProvider.html5Mode(true);
   }

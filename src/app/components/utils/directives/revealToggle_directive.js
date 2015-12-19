@@ -19,7 +19,7 @@
             var directive = {
                 restrict: 'A',
                 scope :{
-                    revealState:"=?"
+                    revealState:'=?'
                 },
                 controller: RevealToggleCtrl,
                 controllerAs: 'vm',
@@ -36,9 +36,8 @@
 
                 revealStateWatcher =  scope.$watch('vm.revealState', function(newValue, oldValue) {
 
-                   if(oldValue != newValue ||( !initialized && newValue && oldValue)){
+                   if(oldValue !== newValue ||( !initialized && newValue && oldValue)){
                       initialized = true;
-                      console.log("DO REVEAL newValue ="+newValue);
                       vm.doReveal();
                    }
                 });
@@ -47,7 +46,7 @@
                     revealStateWatcher();
                 });
 
-           };
+           }
         }
 
         RevealToggleCtrl.$inject = ['$scope', '$window','$rootScope','$element', '$attrs'];
@@ -65,7 +64,7 @@
                 var operaTransitonEnded = null;
                 var revealElement = null;
 
-                function transitionEnded(e){
+                function transitionEnded(){
                     //be aware of other event names from other browsers vendor-prefixed
                     $rootScope.$broadcast('reveableTansitioned::revealableComplete');
                     removeTransitionListeners(revealElement);
@@ -92,18 +91,19 @@
                function doReveal(){
                         if(!started){
                             started = true;
-                            if (!target) target   = document.querySelector($attrs.revealToggle);
-                            if (!content) content = target.querySelector('.revealable_content');
+                            if (!target){
+                                target   = document.querySelector($attrs.revealToggle);
+                            }
+                            if (!content){
+                                  content = target.querySelector('.revealable_content');
+                            }
                             var revealElementName = $attrs.revealToggle.substring(1,$attrs.revealToggle.length);
                             revealElement =  angular.element(document.getElementById(revealElementName));
-                            console.log("revealElementName ="+revealElementName);
-                            console.log("$attrs.contracted ="+$attrs.contracted);
 
                             if(!$attrs.contracted) {
                                 setUpTranstionListeners(revealElement);
                                 content.style.border = '1px solid rgba(0,0,0,0)';
                                 var y = content.clientHeight;
-                                console.log("content.clientHeight ="+content.clientHeight);
                                 content.style.border = 0;
                                 target.style.height = y + 'px';
                             } else {
@@ -120,5 +120,5 @@
                $scope.$on('$destroy', function() {
                     removeTransitionListeners(revealElement);
               });
-        };
+        }
 })();

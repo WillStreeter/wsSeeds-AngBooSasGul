@@ -1,27 +1,27 @@
-<div class="container dashboard-stage"   ng-cloak>
+<div class="container dashboard-stage"ng-cloak>
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar" ng-cloak>
-            <li class="active"><a href="/dashboard">{{vm.dropContent[0].key| capitalize:1}} <span class="sr-only">(current)</span></a></li>
-            <li><a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></li>
-            <li><a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}">{{vm.dropContent[2].key| capitalize:1}} </a></li>
-            <li><a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}">{{vm.dropContent[3].key| capitalize:1}} </a></li>
+            <li class="active"><a href="/dashboard" ng-cloak>{{vm.dropContent[0].key| capitalize:1}} <span class="sr-only">(current)</span></a></li>
+            <li><a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}" ng-cloak>{{vm.dropContent[1].key| capitalize:1}} </a></li>
+            <li><a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}"ng-cloak>{{vm.dropContent[2].key| capitalize:1}} </a></li>
+            <li><a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}" ng-cloak>{{vm.dropContent[3].key| capitalize:1}} </a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-md-10  main">
         <h1 class="page-header">Seed Growth</h1>
-        <ul class="list-inline" ng-cloak>
-            <li class="active" ng-cloak>
-                <h4 ng-show="vm.dropContent[0].mastView"><a href="/dashboard">{{vm.dropContent[0].key| capitalize:1}} </a></h4>
+        <ul class="list-inline">
+            <li class="active" >
+                <h4 ng-show="vm.dropContent[0].mastView" ng-cloak><a href="/dashboard">{{vm.dropContent[0].key| capitalize:1}} </a></h4>
             </li>
-            <li ng-cloak>
-                <h4 ng-show="vm.dropContent[1].mastView"><a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></h4>
+            <li>
+                <h4 ng-show="vm.dropContent[1].mastView" ng-cloak><a href="{{'/dashboard?seedling='+vm.dropContent[1].key}}">{{vm.dropContent[1].key| capitalize:1}} </a></h4>
             </li>
-            <li  ng-cloak>
-                <h4 ng-show="vm.dropContent[2].mastView"><a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}">{{vm.dropContent[2].key| capitalize:1}}  </a></h4>
+            <li>
+                <h4 ng-show="vm.dropContent[2].mastView"  ng-cloak><a href="{{'/dashboard?seedling='+vm.dropContent[2].key}}">{{vm.dropContent[2].key| capitalize:1}}  </a></h4>
             </li>
-            <li ng-cloak>
-                <h4 ng-show="vm.dropContent[3].mastView"><a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}">{{vm.dropContent[3].key| capitalize:1}}  </a></h4>
+            <li>
+                <h4 ng-show="vm.dropContent[3].mastView" ng-cloak><a href="{{'/dashboard?seedling='+vm.dropContent[3].key}}">{{vm.dropContent[3].key| capitalize:1}}  </a></h4>
             </li>
         </ul>
         <div class="row">

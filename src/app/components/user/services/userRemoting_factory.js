@@ -38,7 +38,7 @@
           function getUserProfileError(error) {
               return error;
           }
-      };
+      }
   }
 
 })();

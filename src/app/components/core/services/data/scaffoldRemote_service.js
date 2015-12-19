@@ -27,7 +27,7 @@ angular
             function getDashBoardError(error) {
                  return error;
             }
-        };
+        }
 
     }
 
