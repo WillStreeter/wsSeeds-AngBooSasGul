@@ -9,17 +9,22 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+    <!-- build:css({.tmp/serve,src}) styles/vendor_barebonesV1.css -->
     <!-- bower:css -->
     <!-- run `gulp inject` to automatically populate bower styles dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css({.tmp/serve,src}) styles/app.css -->
+    <!-- build:css({.tmp/serve,src}) styles/barebonesV1.css -->
     <!-- inject:css -->
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
+     <style>
+      [ng-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body ng-controller="CorebaseCtrl"  ng-cloak >
     <div bootstrap-nav-bar ></div>
@@ -28,13 +33,13 @@
     <![endif]-->
      <div class="container-fluid" ng-view></div>
 
-    <!-- build:js(src) scripts/vendor.js -->
+    <!-- build:js(src) scripts/vendor_barebonesV1.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/barebonesV1_wsSeed.js -->
     <!-- inject:js -->
     <!-- js files will be automatically insert here -->
     <!-- endinject -->

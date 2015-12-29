@@ -1,4 +1,8 @@
+
 (function(){
+
+'use strict';
+
     describe('HomeCtrl Controller Test', function () {
       beforeEach( module('wsSeed.mainStage.module'));
       var controller = null;

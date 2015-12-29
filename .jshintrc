@@ -1,6 +1,5 @@
 {
-   "browser": true,
-  "globalstrict": true,
+  "browser": true,
   "bitwise": true,
   "camelcase": false,
   "curly": true,
@@ -25,6 +24,7 @@
     "inject": false,
     "module": false,
     // JASMINE
+    "beforeDescribe": false,
     "describe": false,
     "it": false,
     "before": false,
