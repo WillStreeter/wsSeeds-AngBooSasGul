@@ -14,12 +14,10 @@
       beforeEach(inject(function ($controller, $rootScope) {
           scope = $rootScope.$new();
           controller = $controller;
-          dashboardData  =  {dashboard :JSON.stringify({
-                                            "dashboard": [  {"index":0, "key":"overview"},
-                                                            {"index":1, "key":"polliantion"},
-                                                            {"index":2, "key":"formation"},
-                                                            {"index":3, "key":"germination"}]
-                                          })};
+          dashboardData  = JSON.parse('{"dashboard": [  {"index":0, "key":"overview"},'+
+                                                    '{"index":1, "key":"polliantion"},'+
+                                                    '{"index":2, "key":"formation"},'+
+                                                    '{"index":3, "key":"germination"}]}');
       }));
 
       it('DashboardCtrl vm with test is working', function () {

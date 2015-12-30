@@ -20,7 +20,6 @@
      var openKey     = 'overview';  //default
      vm.viewState    = 'DashboardCtrl';
      vm.dropContent  = angular.fromJson(dashboardData.dashboard);
-
      angular.forEach(vm.dropContent, function(item){
              item.open = false;
              item.mastVeiw = false;
