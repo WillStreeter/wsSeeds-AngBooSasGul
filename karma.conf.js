@@ -7,11 +7,7 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    runnerPort: 9100,
-    colors: true,
-    logLevel: config.LOG_INFO,
-
-    reporters: ['progress'],
+    reporters: ['progress','html'],
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'src/',
@@ -21,6 +17,7 @@ module.exports = function(config) {
     browsers : ['Firefox'],
 
     plugins : [
+      'karma-htmlfile-reporter',
       'karma-firefox-launcher',
       'karma-phantomjs-launcher',
       'karma-jasmine',
@@ -31,13 +28,12 @@ module.exports = function(config) {
       'src/**/*.html': ['ng-html2js']
     },
 
+    htmlReporter: {
+      outputFile: 'e2e/units.html',
 
-    // the default configuration
-    junitReporter: {
-      outputDir: '', // results will be saved as $outputDir/$browserName.xml
-      outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
-      suite: '', // suite will become the package name attribute in xml testsuite element
-      useBrowserName: true // add browser name to report and classes names
+      // Optional
+      pageTitle: 'Unit Tests For BareBones',
+      subPageTitle: 'Simple test of various components'
     }
   };
 
